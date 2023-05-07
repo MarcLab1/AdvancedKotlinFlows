@@ -11,11 +11,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.advancedkotlinflows.ui.Todo
+import com.advancedkotlinflows.ui.fake.FakeViewModel
 
 @Composable
 fun HomePage(vm: HomeViewModel = viewModel()) {
     var text by remember { mutableStateOf("") }
-    var homeState = vm.homeState.collectAsState()
+    val homeState = vm.homeState.collectAsState()
 
     //Gabor says to put this logic in the DAO to make the streams reactive
   /*  val (completed, notCompleted) = homeState.value.todos.partition {
@@ -69,7 +70,9 @@ fun HomePage(vm: HomeViewModel = viewModel()) {
 @Composable
 fun ShowTodo(index: Int, todo: Todo)
 {
-    Card(elevation = 3.dp, modifier = Modifier.fillMaxWidth().padding(4.dp))
+    Card(elevation = 3.dp, modifier = Modifier
+        .fillMaxWidth()
+        .padding(4.dp))
     {
         Row() {
             Text(todo.description, modifier = Modifier.padding(end = 5.dp))

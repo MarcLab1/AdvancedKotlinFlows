@@ -3,6 +3,7 @@ package com.advancedkotlinflows
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import com.advancedkotlinflows.ui.fake.FakePage
 import com.advancedkotlinflows.ui.home.HomePage
 import com.advancedkotlinflows.ui.theme.AdvancedKotlinFlowsTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -13,7 +14,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             AdvancedKotlinFlowsTheme {
-                HomePage()
+                FakePage()
             }
         }
     }

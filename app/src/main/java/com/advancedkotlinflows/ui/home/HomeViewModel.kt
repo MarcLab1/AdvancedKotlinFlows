@@ -30,10 +30,10 @@ class HomeViewModel @Inject constructor(
     private val _homeState: MutableStateFlow<HomeState> = MutableStateFlow(HomeState())
     val homeState: StateFlow<HomeState> = _homeState.asStateFlow()
     var todoFlow: Flow<Todo>? = null
+    var list : MutableList<Int> = mutableListOf()
 
     init {
         getTodos10()
-
     }
 
     fun insertTodo(text: String) {
